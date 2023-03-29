@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>PXE无人值守自动化灌装 | LongLiveMyLove</title><meta name="author" content="Kilig"><meta name="copyright" content="Kilig"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="什么是PXEPXE is Pro-Boot Execution Environment  进行 PXE 安装的必要条件是在要安装的计算机中必须包含一个 PXE 支持的网卡（NIC），即网卡中必须要有 PXE Client。PXE 协议可以使计算机通过网络启动。 此协议分为 Client端和 Server 端，而PXE Client则在网卡的 ROM 中。当计算机引导时，BIOS 把 PXE Cli">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PXE无人值守自动化灌装">
+<meta property="og:url" content="https://kflag.top/posts/865cc3a3.html">
+<meta property="og:site_name" content="LongLiveMyLove">
+<meta property="og:description" content="什么是PXEPXE is Pro-Boot Execution Environment  进行 PXE 安装的必要条件是在要安装的计算机中必须包含一个 PXE 支持的网卡（NIC），即网卡中必须要有 PXE Client。PXE 协议可以使计算机通过网络启动。 此协议分为 Client端和 Server 端，而PXE Client则在网卡的 ROM 中。当计算机引导时，BIOS 把 PXE Cli">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://kflag.top/img/postimg/865cc3a3.jpg">
+<meta property="article:published_time" content="2023-01-02T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-03-29T02:40:26.000Z">
+<meta property="article:author" content="Kilig">
+<meta property="article:tag" content="Centos">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kflag.top/img/postimg/865cc3a3.jpg"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="https://kflag.top/posts/865cc3a3.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?370923bc438a46c33b8fd69483cd2c84";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-153143905-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-153143905-1');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'PXE无人值守自动化灌装',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2023-03-29 02:40:26'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-window-restore"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-history"></i><span> 时光机</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-space-shuttle"></i><span> 导航</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('/img/postimg/865cc3a3.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="LongLiveMyLove"><span class="site-name">LongLiveMyLove</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-window-restore"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-history"></i><span> 时光机</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-space-shuttle"></i><span> 导航</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">PXE无人值守自动化灌装</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2023-01-02T00:00:00.000Z" title="发表于 2023-01-02 00:00:00">2023-01-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Centos/">Centos</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="PXE无人值守自动化灌装"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="什么是PXE"><a href="#什么是PXE" class="headerlink" title="什么是PXE"></a>什么是PXE</h1><p>PXE is Pro-Boot Execution Environment</p>
+<ul>
+<li>进行 PXE 安装的必要条件是在要安装的计算机中必须包含一个 PXE 支持的网卡（NIC），即网卡中必须要有 PXE Client。PXE 协议可以使计算机通过网络启动。</li>
+<li>此协议分为 Client端和 Server 端，而PXE Client则在网卡的 ROM 中。当计算机引导时，BIOS 把 PXE Client 调入内存中执行，然后由 PXE Client 将放置在远端的文件通过网络下载到本地运行。</li>
+<li>运行 PXE 协议需要设置 DHCP 服务器和 TFTP 服务器。</li>
+<li>DHCP 服务器会给 PXE Client（将要安装系统的主机）分配一个 IP 地址，由于是给 PXE Client 分配 IP 地址，所以在配置 DHCP 服务器时需要增加相应的 PXE 设置。此外，在 PXE Client 的 ROM 中，已经存在了 TFTP Client，那么它就可以通过 TFTP 协议到 TFTP Server 上下载所需的文件了。</li>
+</ul>
+<h1 id="PXE的工作过程"><a href="#PXE的工作过程" class="headerlink" title="PXE的工作过程"></a>PXE的工作过程</h1><ol>
+<li>PXE Client 从自己的PXE网卡启动，向本网络中的DHCP服务器索取IP；</li>
+<li>DHCP 服务器返回分配给客户机的IP 以及PXE文件的放置位置(该文件一般是放在一台TFTP服务器上) ；</li>
+<li>PXE Client 向本网络中的TFTP服务器索取pxelinux.0 文件；</li>
+<li>PXE Client 取得pxelinux.0 文件后之执行该文件；</li>
+<li>根据pxelinux.0 的执行结果，通过TFTP服务器加载内核和文件系统；</li>
+<li>进入安装画面, 此时可以通过选择HTTP、FTP、NFS 方式之一进行安装；<br>详细工作流程，请参考下面这幅图：<br><img src="https://kilig-img.oss-cn-qingdao.aliyuncs.com/post/1.jpg"></li>
+</ol>
+<h1 id="什么是Kickstart"><a href="#什么是Kickstart" class="headerlink" title="什么是Kickstart"></a>什么是Kickstart</h1><p>Kickstart是一种无人值守的安装方式。它的工作原理是在安装过程中记录典型的需要人工干预填写的各种参数，并生成一个名为ks.cfg的文件。如果在安装过程中（不只局限于生成Kickstart安装文件的机器）出现要填写参数的情况，安装程序首先会去查找Kickstart生成的文件，如果找到合适的参数，就采用所找到的参数；如果没有找到合适的参数，便需要安装者手工干预了。所以，如果Kickstart文件涵盖了安装过程中可能出现的所有需要填写的参数，那么安装者完全可以只告诉安装程序从何处取ks.cfg文件，然后就去忙自己的事情。等安装完毕，安装程序会根据ks.cfg中的设置重启系统，并结束安装。<br>PXE+Kickstart 无人值守安装操作系统完整过程如下：<br><img src="https://kilig-img.oss-cn-qingdao.aliyuncs.com/post/2.jpg"></p>
+<p>安装DHCP + tftp</p>
+<h1 id="YUM-安装信息"><a href="#YUM-安装信息" class="headerlink" title="YUM 安装信息"></a>YUM 安装信息</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install -y dhcp tftp-server vim lrzsz xinetd net-tools syslinux rsync system-config-kickstart httpd</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h1><p>关闭防火墙<br>systemctl stop firewalld<br>systemctl disable firewalld<br>关闭selinux<br>sed -i “s&#x2F;enforcing&#x2F;disabled&#x2F;g” &#x2F;etc&#x2F;selinux&#x2F;config<br>setenforce 0</p>
+<h1 id="配置DHCP"><a href="#配置DHCP" class="headerlink" title="配置DHCP"></a>配置DHCP</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost dhcp]<span class="comment"># cat dhcpd.conf </span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># DHCP Server Configuration file.</span></span><br><span class="line"><span class="comment">#   see /usr/share/doc/dhcp*/dhcpd.conf.example</span></span><br><span class="line"><span class="comment">#   see dhcpd.conf(5) man page</span></span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<p>配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost dhcp]<span class="comment"># cat dhcpd.conf </span></span><br><span class="line">default-lease-time 600;</span><br><span class="line">max-lease-time 7200;</span><br><span class="line">subnet 192.168.35.0 netmask 255.255.255.0 &#123;</span><br><span class="line">  range 192.168.35.10 192.168.35.200;</span><br><span class="line">  option routers 192.168.35.1;</span><br><span class="line">  next-server 192.168.35.177;</span><br><span class="line">  filename=<span class="string">&quot;pxelinux.0&quot;</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[root@localhost dhcp]<span class="comment"># </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>systemctl enable dhcpd<br>systemctl start dhcpd</p>
+<p>监听端口<br>netstat -tulnp |grep :67</p>
+<h1 id="配置tftp，-x2F-x2F-tftp服务提供压缩内核和系统引导程序"><a href="#配置tftp，-x2F-x2F-tftp服务提供压缩内核和系统引导程序" class="headerlink" title="配置tftp，&#x2F;&#x2F; tftp服务提供压缩内核和系统引导程序"></a>配置tftp，&#x2F;&#x2F; tftp服务提供压缩内核和系统引导程序</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">root@localhost ~]<span class="comment"># cat /etc/xinetd.d/tftp </span></span><br><span class="line"><span class="comment"># default: off</span></span><br><span class="line"><span class="comment"># description: The tftp server serves files using the trivial file transfer \</span></span><br><span class="line"><span class="comment">#	protocol.  The tftp protocol is often used to boot diskless \</span></span><br><span class="line"><span class="comment">#	workstations, download configuration files to network-aware printers, \</span></span><br><span class="line"><span class="comment">#	and to start the installation process for some operating systems.</span></span><br><span class="line">service tftp</span><br><span class="line">&#123;</span><br><span class="line">	socket_type		= dgram</span><br><span class="line">	protocol		= udp</span><br><span class="line">	<span class="built_in">wait</span>			= <span class="built_in">yes</span></span><br><span class="line">	user			= root</span><br><span class="line">	server			= /usr/sbin/in.tftpd</span><br><span class="line">	server_args		= -s /var/lib/tftpboot</span><br><span class="line">	<span class="built_in">disable</span>			= <span class="built_in">yes</span></span><br><span class="line">	per_source		= 11</span><br><span class="line">	cps			= 100 2</span><br><span class="line">	flags			= IPv4</span><br><span class="line">&#125;</span><br><span class="line">[root@localhost ~]<span class="comment"># </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>配置<br><img src="https://kilig-img.oss-cn-qingdao.aliyuncs.com/post/3.jpg"></p>
+<p>修改这一项为”disable     &#x3D;no”</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># systemctl start tftp</span></span><br><span class="line">[root@localhost ~]<span class="comment"># systemctl status tftp</span></span><br><span class="line">● tftp.service - Tftp Server</span><br><span class="line">   Loaded: loaded (/usr/lib/systemd/system/tftp.service; indirect; vendor preset: disabled)</span><br><span class="line">   Active: active (running) since 五 2021-09-24 16:37:24 CST; 1s ago</span><br><span class="line">     Docs: man:in.tftpd</span><br><span class="line"> Main PID: 1610 (in.tftpd)</span><br><span class="line">   CGroup: /system.slice/tftp.service</span><br><span class="line">           └─1610 /usr/sbin/in.tftpd -s /var/lib/tftpboot</span><br><span class="line"></span><br><span class="line">9月 24 16:37:24 localhost.localdomain systemd[1]: Started Tftp Server.</span><br><span class="line">[root@localhost ~]<span class="comment"># systemctl enable tftp</span></span><br><span class="line">Created symlink from /etc/systemd/system/sockets.target.wants/tftp.socket to /usr/lib/systemd/system/tftp.socket.</span><br><span class="line">[root@localhost ~]<span class="comment"># systemctl restart xinetd</span></span><br><span class="line">[root@localhost ~]<span class="comment"># systemctl enable xinetd</span></span><br></pre></td></tr></table></figure>
+<p>监听端口<br>netstat -tulnp |grep :69</p>
+<h1 id="pxelinux-0-网络引导程序"><a href="#pxelinux-0-网络引导程序" class="headerlink" title="pxelinux.0 网络引导程序"></a>pxelinux.0 网络引导程序</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost tftpboot]<span class="comment"># pwd</span></span><br><span class="line">/var/lib/tftpboot</span><br><span class="line">[root@localhost tftpboot]<span class="comment"># ls</span></span><br><span class="line">[root@localhost tftpboot]<span class="comment"># </span></span><br></pre></td></tr></table></figure>
+<p>查看下pxelinux.0文件是否存在<br>yum install mlocate -y yum源处已经添加</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost tftpboot]<span class="comment"># locate pxelinux.0</span></span><br><span class="line">[root@localhost tftpboot]<span class="comment"># </span></span><br><span class="line"><span class="comment">#以上查询不到，换种方式</span></span><br><span class="line">[root@localhost tftpboot]<span class="comment"># yum provides &quot;*/pxelinux.0&quot;</span></span><br><span class="line">已加载插件：fastestmirror</span><br><span class="line">Loading mirror speeds from cached hostfile</span><br><span class="line"> * base: mirrors.cn99.com</span><br><span class="line"> * extras: mirrors.bupt.edu.cn</span><br><span class="line"> * updates: mirrors.cn99.com</span><br><span class="line">base/7/x86_64/filelists_db                                                                                                              | 7.2 MB  00:00:01     </span><br><span class="line">extras/7/x86_64/filelists_db                                                                                                            | 259 kB  00:00:00     </span><br><span class="line">updates/7/x86_64/filelists_db                                                                                                           | 6.1 MB  00:00:00     </span><br><span class="line">syslinux-4.05-15.el7.x86_64 : Simple kernel loader <span class="built_in">which</span> boots from a FAT filesystem</span><br><span class="line">源    ：base</span><br><span class="line">匹配来源：</span><br><span class="line">文件名    ：/usr/share/syslinux/pxelinux.0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">syslinux-tftpboot-4.05-15.el7.noarch : SYSLINUX modules <span class="keyword">in</span> /var/lib/tftpboot, available <span class="keyword">for</span> network booting</span><br><span class="line">源    ：base</span><br><span class="line">匹配来源：</span><br><span class="line">文件名    ：/var/lib/tftpboot/pxelinux.0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[root@localhost tftpboot]<span class="comment"># rpm -aq |grep syslinux</span></span><br><span class="line">[root@localhost tftpboot]<span class="comment"># </span></span><br><span class="line"></span><br><span class="line"><span class="comment">#可知syslinux包没有安装</span></span><br><span class="line"><span class="comment">#yum install syslinux -y</span></span><br><span class="line"></span><br><span class="line">[root@localhost tftpboot]<span class="comment"># rpm -ql syslinux |grep pxe</span></span><br><span class="line">/usr/share/doc/syslinux-4.05/pxelinux.txt</span><br><span class="line">/usr/share/syslinux/gpxecmd.c32</span><br><span class="line">/usr/share/syslinux/gpxelinux.0</span><br><span class="line">/usr/share/syslinux/gpxelinuxk.0</span><br><span class="line">/usr/share/syslinux/pxechain.com</span><br><span class="line">/usr/share/syslinux/pxelinux.0</span><br></pre></td></tr></table></figure>
+<p>pxelinux.0路径&#x2F;usr&#x2F;share&#x2F;syslinux&#x2F;pxelinux.0<br>拷贝pxelinux.0到&#x2F;var&#x2F;lib&#x2F;tftpboot</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost tftpboot]<span class="comment"># cp /usr/share/syslinux/pxelinux.0 /var/lib/tftpboot/</span></span><br><span class="line">[root@localhost tftpboot]<span class="comment"># ls</span></span><br><span class="line">pxelinux.0</span><br><span class="line">[root@localhost tftpboot]<span class="comment"># </span></span><br></pre></td></tr></table></figure>
+<p>传统linux操作系统启动<br>1.BIOS自检<br>2.读取引导程序<br>2.1 GRUb（一段固定的可执行代码）<br>2.2 BIOS执行引导程序<br>2.3 引导程序读取配置文件（&#x2F;boot&#x2F;grub&#x2F;grub.conf）</p>
+<p>PXE<br>1.客户端启动系统，选择网卡启动<br>2.从DHCP服务器中获取到了IP地址等信息<br>3.还获取到了tftp server及网络引导程序pxelinux.0<br>4.通过网卡读取到tftp server(&#x2F;var&#x2F;lib&#x2F;tftpboot)上的pxelinux.0,读取到内存中<br>5.在内存中执行引导程序<br>6.读取引导程序的配置文件（var&#x2F;lib&#x2F;tftpboot&#x2F;pxelinux.0&#x2F;default）<br>7.读取default内容</p>
+<h1 id="挂载ios镜像"><a href="#挂载ios镜像" class="headerlink" title="挂载ios镜像"></a>挂载ios镜像</h1><p> mount -o loop CentOS-7-x86_64-Minimal-1908.iso &#x2F;mnt&#x2F;</p>
+<h1 id="配置pxelinux-cfg-文件"><a href="#配置pxelinux-cfg-文件" class="headerlink" title="配置pxelinux.cfg 文件"></a>配置pxelinux.cfg 文件</h1><p>mkdir &#x2F;var&#x2F;lib&#x2F;tftpboot&#x2F;pxelinux.cfg    </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost isolinux]<span class="comment"># cp isolinux.cfg /var/lib/tftpboot/pxelinux.cfg/default </span></span><br><span class="line"><span class="built_in">cp</span>：是否覆盖<span class="string">&quot;/var/lib/tftpboot/pxelinux.cfg/default&quot;</span>？ y</span><br><span class="line">[root@localhost isolinux]<span class="comment"># ls</span></span><br><span class="line">boot.cat  boot.msg  grub.conf  initrd.img  isolinux.bin  isolinux.cfg  memtest  splash.png  TRANS.TBL  vesamenu.c32  vmlinuz</span><br><span class="line">[root@localhost isolinux]<span class="comment"># cp * /var/lib/tftpboot/</span></span><br><span class="line">[root@localhost isolinux]<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<p>已经可以看到安装界面<br><img src="https://kilig-img.oss-cn-qingdao.aliyuncs.com/post/4.jpg"></p>
+<h1 id="扩展多个安装系统"><a href="#扩展多个安装系统" class="headerlink" title="扩展多个安装系统"></a>扩展多个安装系统</h1><p>这里面最重要的文件，vmlinuz initd.img</p>
+<p>vmlinuz 内核<br>initd.img 驱动程序，一定要匹配OS</p>
+<p>ios镜像挂载后，可以看到一个image文件夹，里面有个pxeboot</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost mnt]<span class="comment"># ls</span></span><br><span class="line">CentOS_BuildTag  EFI  EULA  GPL  images  isolinux  LiveOS  Packages  repodata  RPM-GPG-KEY-CentOS-7  RPM-GPG-KEY-CentOS-Testing-7  TRANS.TBL</span><br><span class="line">[root@localhost mnt]<span class="comment"># cd images/</span></span><br><span class="line">[root@localhost images]<span class="comment"># ls</span></span><br><span class="line">efiboot.img  pxeboot  TRANS.TBL</span><br><span class="line">[root@localhost images]<span class="comment"># cd pxeboot/</span></span><br><span class="line">[root@localhost pxeboot]<span class="comment"># ls</span></span><br><span class="line">initrd.img  TRANS.TBL  vmlinuz</span><br><span class="line">[root@localhost pxeboot]<span class="comment"># </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>在&#x2F;var&#x2F;lib&#x2F;tftpboot下创建一个kilig的文件夹<br>把vmlinuz initd.img拷贝到这个文件夹下<br><img src="https://kilig-img.oss-cn-qingdao.aliyuncs.com/post/5.jpg"><br>仿写安装界面<br><img src="https://kilig-img.oss-cn-qingdao.aliyuncs.com/post/6.jpg"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#cp /media/images/pxeboot/&#123;initrd.img,vmlinuz&#125; /var/lib/tftpboot/</span></span><br><span class="line"><span class="comment">#cp /media/isolinux/&#123;boot.msg,vesamenu.c32,splash.jpg&#125; /var/lib/tftpboot/</span></span><br></pre></td></tr></table></figure>
+<h1 id="system-config-kickstart配置和httpd配置"><a href="#system-config-kickstart配置和httpd配置" class="headerlink" title="system-config-kickstart配置和httpd配置"></a>system-config-kickstart配置和httpd配置</h1><p>安装system-config-kickstart httpd</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost mnt]<span class="comment"># systemctl enable httpd</span></span><br><span class="line">Created symlink from /etc/systemd/system/multi-user.target.wants/httpd.service to /usr/lib/systemd/system/httpd.service.</span><br><span class="line">[root@localhost mnt]<span class="comment"># systemctl start httpd</span></span><br><span class="line">[root@localhost mnt]<span class="comment"># </span></span><br></pre></td></tr></table></figure>
+<p><img src="https://kilig-img.oss-cn-qingdao.aliyuncs.com/post/7.jpg">安装桌面</p>
+<ul>
+<li><p>tftp客户端测试：tftp</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> yum -y install tftp</span><br><span class="line"> <span class="built_in">cd</span> /var/lib/tftpboot</span><br><span class="line"> <span class="built_in">touch</span> tftp.test</span><br><span class="line"> <span class="built_in">cd</span></span><br><span class="line">tftp 10.1.255.166</span><br><span class="line">tftp&gt; get tftp.test</span><br><span class="line">tftp&gt; quit</span><br></pre></td></tr></table></figure></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl  start xinetd httpd dhcpd  tftp</span><br><span class="line">systemctl  <span class="built_in">enable</span>  xinetd httpd dhcpd  tftp</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://kflag.top">Kilig</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://kflag.top/posts/865cc3a3.html">https://kflag.top/posts/865cc3a3.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://kflag.top" target="_blank">LongLiveMyLove</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Centos/">Centos</a><a class="post-meta__tags" href="/tags/Linux/">Linux</a></div><div class="post_share"></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/d61aa66.html" title="Centos7-RPM包"><img class="cover" src="/img/postimg/d61aa66.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-02</div><div class="title">Centos7-RPM包</div></div></a></div><div><a href="/posts/8afe16ec.html" title="Centos7-网卡绑定"><img class="cover" src="/img/postimg/8afe16ec.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-02</div><div class="title">Centos7-网卡绑定</div></div></a></div><div><a href="/posts/a93b0a9a.html" title="Centos7制作离线yum源"><img class="cover" src="/img/postimg/a93b0a9a.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-02</div><div class="title">Centos7制作离线yum源</div></div></a></div><div><a href="/posts/1fd696ef.html" title="Centos7挂载NTFS数据盘"><img class="cover" src="/img/postimg/1fd696ef.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-02</div><div class="title">Centos7挂载NTFS数据盘</div></div></a></div><div><a href="/posts/bf4824b5.html" title="Centos7服务器设置定时任务"><img class="cover" src="/img/postimg/bf4824b5.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-02</div><div class="title">Centos7服务器设置定时任务</div></div></a></div><div><a href="/posts/1094cb10.html" title="Centos7默认启动顺序设置和删除内核"><img class="cover" src="/img/postimg/1094cb10.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-02</div><div class="title">Centos7默认启动顺序设置和删除内核</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Kilig</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/longlivemylove"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://instagram.com/yourname" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a><a class="social-icon" href="https://www.youtube.com/?hl=zh-CN" target="_blank" title="Youtube"><i class="fa-brands fa-youtube"></i></a><a class="social-icon" href="https://space.bilibili.com/203082958" target="_blank" title="哔哩哔哩"><i class="fa-brands fa-bilibili"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">当你真心渴望某样东西时，整个宇宙都会来帮忙。 ---- 《牧羊少年奇幻之旅》</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFPXE"><span class="toc-number">1.</span> <span class="toc-text">什么是PXE</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PXE%E7%9A%84%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">PXE的工作过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFKickstart"><span class="toc-number">3.</span> <span class="toc-text">什么是Kickstart</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#YUM-%E5%AE%89%E8%A3%85%E4%BF%A1%E6%81%AF"><span class="toc-number">4.</span> <span class="toc-text">YUM 安装信息</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%93%8D%E4%BD%9C"><span class="toc-number">5.</span> <span class="toc-text">其他操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEDHCP"><span class="toc-number">6.</span> <span class="toc-text">配置DHCP</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEtftp%EF%BC%8C-x2F-x2F-tftp%E6%9C%8D%E5%8A%A1%E6%8F%90%E4%BE%9B%E5%8E%8B%E7%BC%A9%E5%86%85%E6%A0%B8%E5%92%8C%E7%B3%BB%E7%BB%9F%E5%BC%95%E5%AF%BC%E7%A8%8B%E5%BA%8F"><span class="toc-number">7.</span> <span class="toc-text">配置tftp，&#x2F;&#x2F; tftp服务提供压缩内核和系统引导程序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#pxelinux-0-%E7%BD%91%E7%BB%9C%E5%BC%95%E5%AF%BC%E7%A8%8B%E5%BA%8F"><span class="toc-number">8.</span> <span class="toc-text">pxelinux.0 网络引导程序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%82%E8%BD%BDios%E9%95%9C%E5%83%8F"><span class="toc-number">9.</span> <span class="toc-text">挂载ios镜像</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEpxelinux-cfg-%E6%96%87%E4%BB%B6"><span class="toc-number">10.</span> <span class="toc-text">配置pxelinux.cfg 文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E5%A4%9A%E4%B8%AA%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F"><span class="toc-number">11.</span> <span class="toc-text">扩展多个安装系统</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#system-config-kickstart%E9%85%8D%E7%BD%AE%E5%92%8Chttpd%E9%85%8D%E7%BD%AE"><span class="toc-number">12.</span> <span class="toc-text">system-config-kickstart配置和httpd配置</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('/img/postimg/865cc3a3.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2023年1月1日 - 2023 By Kilig</div><div class="footer_custom_text">久居我爱，岁月何其速，哎呀又一年。</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
