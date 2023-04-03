@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Centos7默认启动顺序设置和删除内核 | LongLiveMyLove</title><meta name="author" content="Kilig"><meta name="copyright" content="Kilig"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="更改内核启动顺序Centos7 服务器每次重启都会启动最新内核版本，有时候我不希望启动最新的，由于和现在某些软件不兼容，还是想选择旧的版本，下面是如何开机启动你的旧版本内核 12[root@localhost ~]# uname -srLinux 3.10.0-862.el7.x86_64 注：这个就是内核版本号 查看系统上的所有可用内核： 123456[root@localhost ~]# su">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Centos7默认启动顺序设置和删除内核 | LongLiveMyLove</title><meta name="author" content="Kilig"><meta name="copyright" content="Kilig"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Centos7 服务器每次重启都会启动最新内核版本，有时候我不希望启动最新的，由于和现在某些软件不兼容，还是想选择旧的版本，下面是如何开机启动你的旧版本内核">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Centos7默认启动顺序设置和删除内核">
 <meta property="og:url" content="https://kflag.top/posts/1094cb10.html">
 <meta property="og:site_name" content="LongLiveMyLove">
-<meta property="og:description" content="更改内核启动顺序Centos7 服务器每次重启都会启动最新内核版本，有时候我不希望启动最新的，由于和现在某些软件不兼容，还是想选择旧的版本，下面是如何开机启动你的旧版本内核 12[root@localhost ~]# uname -srLinux 3.10.0-862.el7.x86_64 注：这个就是内核版本号 查看系统上的所有可用内核： 123456[root@localhost ~]# su">
+<meta property="og:description" content="Centos7 服务器每次重启都会启动最新内核版本，有时候我不希望启动最新的，由于和现在某些软件不兼容，还是想选择旧的版本，下面是如何开机启动你的旧版本内核">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://kflag.top/img/postimg/1094cb10.jpg">
 <meta property="article:published_time" content="2023-01-02T00:00:00.000Z">
-<meta property="article:modified_time" content="2023-03-29T02:41:22.000Z">
+<meta property="article:modified_time" content="2023-04-03T03:10:58.000Z">
 <meta property="article:author" content="Kilig">
 <meta property="article:tag" content="Centos">
 <meta property="article:tag" content="Linux">
@@ -69,7 +69,7 @@ gtag('config', 'UA-153143905-1');
   isHome: false,
   isHighlightShrink: undefined,
   isToc: true,
-  postUpdate: '2023-03-29 02:41:22'
+  postUpdate: '2023-04-03 03:10:58'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1

@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Docker运行容器打包成镜像保存和加载 | LongLiveMyLove</title><meta name="author" content="Kilig"><meta name="copyright" content="Kilig"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="问题描述docker运行容器打包成镜像保存并导出 步骤1 查看需要保存的容器的的名字，这里以hexo镜像举例说明 1234docker ps #查看容器docker images#查看镜像   2 保存镜像docker commit提交容器副本使之成为一个新的镜像  可以看出已经存在一个hexo:1.0的镜像，所以这边博主保存为hexo:2.0  12docker stop hexo docker">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Docker运行容器打包成镜像保存和加载 | LongLiveMyLove</title><meta name="author" content="Kilig"><meta name="copyright" content="Kilig"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="docker运行容器打包成镜像保存并导出">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker运行容器打包成镜像保存和加载">
 <meta property="og:url" content="https://kflag.top/posts/1bc4c7d9.html">
 <meta property="og:site_name" content="LongLiveMyLove">
-<meta property="og:description" content="问题描述docker运行容器打包成镜像保存并导出 步骤1 查看需要保存的容器的的名字，这里以hexo镜像举例说明 1234docker ps #查看容器docker images#查看镜像   2 保存镜像docker commit提交容器副本使之成为一个新的镜像  可以看出已经存在一个hexo:1.0的镜像，所以这边博主保存为hexo:2.0  12docker stop hexo docker">
+<meta property="og:description" content="docker运行容器打包成镜像保存并导出">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://kflag.top/img/postimg/1bc4c7d9.jpg">
 <meta property="article:published_time" content="2023-01-02T00:00:00.000Z">
-<meta property="article:modified_time" content="2023-03-28T09:49:38.000Z">
+<meta property="article:modified_time" content="2023-04-03T03:11:48.000Z">
 <meta property="article:author" content="Kilig">
 <meta property="article:tag" content="Centos">
 <meta property="article:tag" content="Docker">
@@ -69,7 +69,7 @@ gtag('config', 'UA-153143905-1');
   isHome: false,
   isHighlightShrink: undefined,
   isToc: true,
-  postUpdate: '2023-03-28 09:49:38'
+  postUpdate: '2023-04-03 03:11:48'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
