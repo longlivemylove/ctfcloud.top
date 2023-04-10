@@ -1,0 +1,318 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>LongLiveMyLove</title><meta name="author" content="Kilig"><meta name="copyright" content="Kilig"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="CTF，知识分享，日常技术笔记">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LongLiveMyLove">
+<meta property="og:url" content="https://kflag.top/page/2/index.html">
+<meta property="og:site_name" content="LongLiveMyLove">
+<meta property="og:description" content="CTF，知识分享，日常技术笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://kflag.top/img/avatar.jpg">
+<meta property="article:author" content="Kilig">
+<meta property="article:tag" content="CTF比赛，攻防对抗，红蓝，HW，Server，Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kflag.top/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="https://kflag.top/page/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?370923bc438a46c33b8fd69483cd2c84";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-153143905-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-153143905-1');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'LongLiveMyLove',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: undefined,
+  isToc: false,
+  postUpdate: '2023-04-10 14:22:07'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-history"></i><span> 时光机</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-space-shuttle"></i><span> 导航</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page fixed" id="page-header" style="background-image: url('/img/index_img.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="LongLiveMyLove"><span class="site-name">LongLiveMyLove</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heartbeat"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-history"></i><span> 时光机</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-space-shuttle"></i><span> 导航</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">LongLiveMyLove</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://www.instagram.com/longlive.mylove/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a><a class="social-icon" href="https://github.com/longlivemylove" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://space.bilibili.com/203082958" target="_blank" title="哔哩哔哩"><i class="fa-brands fa-bilibili"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/posts/63ab5913.html" title="Markdown语法入门"><img class="post-bg" src="/img/postimg/63ab5913.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Markdown语法入门"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/63ab5913.html" title="Markdown语法入门">Markdown语法入门</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-02T00:00:00.000Z" title="发表于 2023-01-02 00:00:00">2023-01-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Blog/">Blog</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Hexo/">Hexo</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Blog/">Blog</a></span></div><div class="content">什么是Markdown？为啥使用Markdown？百度百科：Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。
+可以让你专注文字内容
+学习成本较低
+博主使用的编辑器Vscode &amp;&amp; Typora
+语法1. 标题与正文123456* 一级标题#* 二级标题##* 三级标题###* 四级标题####* 五级标题#####* 六级标题######
+####### 并没有七级标题我是正文通常也使用 &#x3D;&#x3D;&#x3D; 表示一级标题，使用 — 表示二级标题。
+示例：
+12345这是一个一级标题============================这是一个二级标题---------------------------------------### 这是一个三级标题
+
+
+2. 粗体写作总要有些重点吧，**加粗**、*斜体*、~~删除线~~开始派上用场了。这时你基本不会打开 Word 那样的笨重软件了
+
+加粗 
+斜线 
+删除线
+
+3. 无序列表
+使用 *，+，- 表示无序列表。
+无序列表
+say s ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/865cc3a3.html" title="PXE无人值守自动化灌装"><img class="post-bg" src="/img/postimg/865cc3a3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PXE无人值守自动化灌装"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/865cc3a3.html" title="PXE无人值守自动化灌装">PXE无人值守自动化灌装</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-02T00:00:00.000Z" title="发表于 2023-01-02 00:00:00">2023-01-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Centos/">Centos</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Centos/">Centos</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Linux/">Linux</a></span></div><div class="content">什么是PXEPXE is Pro-Boot Execution Environment
+
+进行 PXE 安装的必要条件是在要安装的计算机中必须包含一个 PXE 支持的网卡（NIC），即网卡中必须要有 PXE Client。PXE 协议可以使计算机通过网络启动。
+此协议分为 Client端和 Server 端，而PXE Client则在网卡的 ROM 中。当计算机引导时，BIOS 把 PXE Client 调入内存中执行，然后由 PXE Client 将放置在远端的文件通过网络下载到本地运行。
+运行 PXE 协议需要设置 DHCP 服务器和 TFTP 服务器。
+DHCP 服务器会给 PXE Client（将要安装系统的主机）分配一个 IP 地址，由于是给 PXE Client 分配 IP 地址，所以在配置 DHCP 服务器时需要增加相应的 PXE 设置。此外，在 PXE Client 的 ROM 中，已经存在了 TFTP Client，那么它就可以通过 TFTP 协议到 TFTP Server 上下载所需的文件了。
+
+PXE的工作过程
+PXE Client 从自己的PXE网卡启动，向本网 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/%C3%A7.html" title="SSH取消DNS反向解析"><img class="post-bg" src="/img/postimg/a4ce7604.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SSH取消DNS反向解析"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/%C3%A7.html" title="SSH取消DNS反向解析">SSH取消DNS反向解析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-02T00:00:00.000Z" title="发表于 2023-01-02 00:00:00">2023-01-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Centos/">Centos</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Centos/">Centos</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Linux/">Linux</a></span></div><div class="content">现象描述SSH登陆时候，认证时间过长，需要十几秒甚至几十秒才能正常登陆,可能原因DNS反向解析的问题，处理方式如下
+解决办法12vi /etc/ssh/sshd_config
+找到选项#UseDNS yes
+修改为UseDNS no
+12systemctl restart sshd#重启sshd 服务
+
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/8c3fc661.html" title="Work-串口服务器串口线线序"><img class="post-bg" src="/img/postimg/8c3fc661.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Work-串口服务器串口线线序"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/8c3fc661.html" title="Work-串口服务器串口线线序">Work-串口服务器串口线线序</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-02T00:00:00.000Z" title="发表于 2023-01-02 00:00:00">2023-01-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Anyuntec/">Anyuntec</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Anyuntec/">Anyuntec</a></span></div><div class="content">
+  6440d048b3f641a553d1e2b9cf4a9835d7b7cb1f44797b98f02321614bc2c5c03b4538ea844080d05024b2e29accca92f208c6281d60be2aca6689dfa31f16b0eb447e8cb85bb8b205d08467f7506c57f867079e64dd5437b9d16a88fbe9ede3942ac664b5792ac671999acf9b26881e78d76e024d34ca12df373f5d17fddc417e957f53ea15689ae1fa0039a102ac661239c59811aa70e2a0827b68a6c82018f118cecdd64bc7aa03e42ab6156eb2556d6047ef4265c4c44dc90468fa3b120dd6049f35130b66a8aeb74617a191f482ff68d3cfda1cb0117c7420be3e24a879af89b26bf8792a43fa7c1d6e7665e98e6dcae8b1b8866f8a0 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/f496e8a6.html" title="交换机划分Vlan，DHCP分配地址和端口镜像"><img class="post-bg" src="/img/postimg/f496e8a6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="交换机划分Vlan，DHCP分配地址和端口镜像"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/f496e8a6.html" title="交换机划分Vlan，DHCP分配地址和端口镜像">交换机划分Vlan，DHCP分配地址和端口镜像</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-02T00:00:00.000Z" title="发表于 2023-01-02 00:00:00">2023-01-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Switch/">Switch</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Switch/">Switch</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E7%BD%91%E7%BB%9C/">网络</a></span></div><div class="content">环境简述目的通过交换机设置12个Vlan，每个端口DHCP动态获取地址，ip地址池设置在1-3三个地址，47口作为镜像端口,源端口为1-12vlan的地址为101-112，这里以Vlan101为例,IP地址为10.0.1.x&#x2F;24 网关 ：10.0.1.254&#x2F;24
+华为交换机配置如下123456789101112[HUAWEI]vlan 101[HUAWEI-vlan101]quit[HUAWEI]interface Vlanif 101[HUAWEI-Vlanif101]ip address 10.0.1.254 255.255.255.0[HUAWEI-Vlanif101]dhcp select interface[HUAWEI-Vlanif101]dhcp server ip-range 10.0.1.1 10.0.1.3[HUAWEI-Vlanif101]dhcp server gateway-list 10.0.1.254[HUAWEI-Vlanif101]dhcp server lease day 10 [HUAWEI-Vlanif101]quit[H ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/be5c9051.html" title="交换机链路聚合"><img class="post-bg" src="/img/postimg/be5c9051.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="交换机链路聚合"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/be5c9051.html" title="交换机链路聚合">交换机链路聚合</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-02T00:00:00.000Z" title="发表于 2023-01-02 00:00:00">2023-01-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Switch/">Switch</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Switch/">Switch</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E7%BD%91%E7%BB%9C/">网络</a></span></div><div class="content">环境简述
+interface GigabitEthernet 1&#x2F;0&#x2F;1 到interface GigabitEthernet 1&#x2F;0&#x2F;3做一个聚合口， 链路聚合可以增加带宽，加上单链路故障，好处不多说
+
+服务器上多网卡绑定到了bond0上
+
+
+H3C交换机详细配置如下：创建聚合口，直接在配置模式下输入
+
+[H3C]interface Bridge-Aggregation 1
+
+
+[H3C-Bridge-Aggregation1]quit
+
+把需要添加的端口加入到这个聚合口中来，以1口举例在接口视图下输入
+
+[H3C]interface GigabitEthernet 1&#x2F;0&#x2F;1
+
+
+[H3C-GigabitEthernet1&#x2F;0&#x2F;1]port link-aggregation group 1
+
+
+[H3C-GigabitEthernet1&#x2F;0&#x2F;1]quit
+
+都添加好之后，查看配置聚合口状态
+
+[H3C]display link-aggregation verbose
+
+
+华为交换机详 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/9cf78211.html" title="我奋斗了18年不是为了和你一起喝咖啡"><img class="post-bg" src="/img/postimg/9cf78211.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我奋斗了18年不是为了和你一起喝咖啡"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/9cf78211.html" title="我奋斗了18年不是为了和你一起喝咖啡">我奋斗了18年不是为了和你一起喝咖啡</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-02T00:00:00.000Z" title="发表于 2023-01-02 00:00:00">2023-01-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AF%AD%E4%B8%8D%E6%83%8A%E4%BA%BA%E6%AD%BB%E4%B8%8D%E4%BC%91/">语不惊人死不休</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E8%AF%AD%E4%B8%8D%E6%83%8A%E4%BA%BA%E6%AD%BB%E4%B8%8D%E4%BC%91/">语不惊人死不休</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%91%98%E6%8A%84/">摘抄</a></span></div><div class="content">
+  cfe37eea2ee4e6bc88ef4c3b548971f5ea2bd0f85b7f573a54cc924730f81612a13c9a1115633e26a0cdd069ae27cd387593dcefd646785ecb742f1f316df58f2a484308700250b9c4d53202146f0a0d286c12a969a797110922e259d4e57f45c3337045f226785b224e46f79866f87b685a526c582921badfc42101f69968d1d313c446f5a1134d54b11ead1582cb2d272f7805969c53fac670e9ffc4bc7ca439cefdadb6fdb8173d9b1b2e461317b2d8e721daab3e3c166f710697dfe074407de9ec01bf7ca75a3adae510be0b06769ceece7a202ce057709fa4f99e3d0dd2b74b18494b7bf858fcfaa0450444c1e947a0674baf35715ad ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/7ad09577.html" title="把网站打包成桌面程序"><img class="post-bg" src="/img/postimg/7ad09577.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="把网站打包成桌面程序"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/7ad09577.html" title="把网站打包成桌面程序">把网站打包成桌面程序</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-02T00:00:00.000Z" title="发表于 2023-01-02 00:00:00">2023-01-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/github/">github</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Github/">Github</a></span></div><div class="content">环境要求
+macOS 10.10+ &#x2F; Windows &#x2F; Linux
+
+Node.js ≥ 12.9 和 npm ≥ 6.9
+
+
+博主以Centos7 安装Nodejs并演示
+123yum install epel-releaseyum install nodejsyum install npm --enablerepo=epel
+
+安装成后，验证是否正确的安装，node -v，如果输出如下版本信息，说明成功安装
+1234[root@localhost ~]# node -vv16.18.1[root@localhost ~]# npm -v8.19.2
+
+安装1npm install nativefier -g
+
+用法以我的博客网站kflag.top创建本机桌面应用程序：
+123nativefier &quot;https://kflag.top&quot;# Centos7下制作exenativefier &quot;https://kflag.top&quot; --platform &quot;windows&quot;
+
+如果需要，可以通过在命令行选项中 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/4b9d6e53.html" title="服务器硬件检验规范"><img class="post-bg" src="/img/postimg/4b9d6e53.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="服务器硬件检验规范"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/4b9d6e53.html" title="服务器硬件检验规范">服务器硬件检验规范</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-02T00:00:00.000Z" title="发表于 2023-01-02 00:00:00">2023-01-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a></span></div><div class="content">适用范围：本规范适用于所有原材料、成品主机机箱，并作为交收的检验依据。
+检验条件1 灯光条件：800mm-900mm的40W日光灯光下照射。
+2 检视角度：被检视面与光源成45度
+3 检视距离：400-500MM
+4 检视时间：每个表面4-9秒，检验员视力：1.0以上
+等级面的定义所有的机箱都依循下列图示所分的不同区域（依每一个表面的分区来判定外观表面缺陷）。
+A、B面：定义为操作人员随时可看见的区域，为外观要求最严格的区域,主要是指机箱正面、顶部。
+C面：定义为操作人员偶尔可看见的区域，其外观要求不如第A、B面严格,主要是指机箱侧面。
+D面：定义为操作人员极少看见的区域，其外观要求次于C面的要求,主要是指机器的底面、背面。
+
+缺陷分类
+异色：与原色不相同或不一致。
+流痕：在机箱表面上，呈波浪或斑文状，有如眼泪流过的痕迹。
+杂质：在机箱表面附着的小微粒。
+有感刮伤：目视明显或用手触摸可以感觉到的浅凹槽。
+无感刮伤：刮痕目视不明显，无手感.
+气泡：机箱喷漆在加工时因空气未排净而造成的表面气泡状或凸起。
+流漆：机箱烤漆表面漆太厚导致漆下流，同时伴有漆堆积现象。
+表面膜厚不均：烤漆表面之漆层 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/3c73f3ec.html" title="计算机漏洞安全相关的概念"><img class="post-bg" src="/img/postimg/3c73f3ec.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机漏洞安全相关的概念"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/3c73f3ec.html" title="计算机漏洞安全相关的概念">计算机漏洞安全相关的概念</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-02T00:00:00.000Z" title="发表于 2023-01-02 00:00:00">2023-01-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BD%91%E5%AE%89/">网安</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/CTF/">CTF</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E7%BD%91%E5%AE%89/">网安</a></span></div><div class="content">
+POC
+
+​	POC，Proof of Concept，中文意思是“观点证明”
+​	这个短语会在漏洞报告中使用，漏洞报告中的POC则是一段说明或者一个攻击的样例，使得读者能够确认这个漏洞是真实存在的
+
+EXP
+
+​	EXP，Exploit，中文意思是“漏洞利用”
+​	意思是一段对漏洞如何利用的详细说明或者一个演示的漏洞攻击代码，可以使得读者完全了解漏洞的机理以及利用的方法
+
+Payload
+
+​	Payload，中文 ‘ 有效载荷 ‘，指成功exploit之后，真正在目标系统执行的代码或指令。
+
+VUL
+
+​	VUL，Vulnerability的缩写，泛指漏洞。
+
+CVE漏洞编号
+
+​	CVE 的英文全称是“Common Vulnerabilities &amp; Exposures”公共漏洞和暴露，例如CVE-2015-0057、CVE-1999-0001等等。
+​	CVE就好像是一个字典表，为广泛认同的信息安全漏洞或者已经暴露出来的弱点给出一个公共的名称。
+如果在一个漏洞报告中指明的一个漏洞，如果有CVE名称，你就可以快速地在任何其它CVE兼容的数据库中找到相应修补的信息，解决安 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Kilig</div><div class="author-info__description">CTF，知识分享，日常技术笔记</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">21</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" href="mailto:longlivemylove@icloud.com"><i class="fa-regular fa-envelope"></i><span>Email</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://www.instagram.com/longlive.mylove/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a><a class="social-icon" href="https://github.com/longlivemylove" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://space.bilibili.com/203082958" target="_blank" title="哔哩哔哩"><i class="fa-brands fa-bilibili"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">当你真心渴望某样东西时，整个宇宙都会来帮忙。 ---- 《牧羊少年奇幻之旅》</div></div><div class="sticky_layout"><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Anyuntec/" style="font-size: 1.1em; color: #999">Anyuntec</a> <a href="/tags/Blog/" style="font-size: 1.1em; color: #999">Blog</a> <a href="/tags/CTF/" style="font-size: 1.23em; color: #999ea6">CTF</a> <a href="/tags/Centos/" style="font-size: 1.5em; color: #99a9bf">Centos</a> <a href="/tags/Docker/" style="font-size: 1.1em; color: #999">Docker</a> <a href="/tags/Github/" style="font-size: 1.1em; color: #999">Github</a> <a href="/tags/Hexo/" style="font-size: 1.1em; color: #999">Hexo</a> <a href="/tags/Linux/" style="font-size: 1.37em; color: #99a4b2">Linux</a> <a href="/tags/Myself/" style="font-size: 1.1em; color: #999">Myself</a> <a href="/tags/Switch/" style="font-size: 1.23em; color: #999ea6">Switch</a> <a href="/tags/Tools/" style="font-size: 1.1em; color: #999">Tools</a> <a href="/tags/%E6%91%98%E6%8A%84/" style="font-size: 1.1em; color: #999">摘抄</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 1.23em; color: #999ea6">服务器</a> <a href="/tags/%E7%BD%91%E5%AE%89/" style="font-size: 1.1em; color: #999">网安</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 1.23em; color: #999ea6">网络</a> <a href="/tags/%E8%AF%AD%E4%B8%8D%E6%83%8A%E4%BA%BA%E6%AD%BB%E4%B8%8D%E4%BC%91/" style="font-size: 1.1em; color: #999">语不惊人死不休</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">21</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2023-01-01T00:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-04-10T14:22:06.742Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/index_img.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2023年1月1日 - 2023 By Kilig</div><div class="footer_custom_text">久居我爱，岁月何其速，哎呀又一年。</div><div class="icp"><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index"><img class="icp-icon" src="https://kilig-img.oss-cn-qingdao.aliyuncs.com/post/11.png"/><span>鲁ICP备2023009840号</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  if (true) {
+    typedJSFn.init(["人生所有变好的过程都不会太舒服","凡令人陷入沉迷当下的舒爽","都会以后期的痛苦为代价来偿还"])
+  } else {
+    document.getElementById("subtitle").innerHTML = '人生所有变好的过程都不会太舒服'
+  }
+}
+typedJSFn.run(subtitleType)</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
