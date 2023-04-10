@@ -35,9 +35,9 @@ https://kflag.top/tags/Docker/
 https://kflag.top/tags/Hexo/
 https://kflag.top/tags/Blog/
 https://kflag.top/tags/Anyuntec/
+https://kflag.top/tags/Myself/
 https://kflag.top/tags/Switch/
 https://kflag.top/tags/%E7%BD%91%E7%BB%9C/
-https://kflag.top/tags/Myself/
 https://kflag.top/tags/%E8%AF%AD%E4%B8%8D%E6%83%8A%E4%BA%BA%E6%AD%BB%E4%B8%8D%E4%BC%91/
 https://kflag.top/tags/%E6%91%98%E6%8A%84/
 https://kflag.top/tags/Github/
@@ -47,8 +47,8 @@ https://kflag.top/categories/Centos/
 https://kflag.top/categories/Docker/
 https://kflag.top/categories/Blog/
 https://kflag.top/categories/Anyuntec/
-https://kflag.top/categories/Switch/
 https://kflag.top/categories/Myself/
+https://kflag.top/categories/Switch/
 https://kflag.top/categories/%E8%AF%AD%E4%B8%8D%E6%83%8A%E4%BA%BA%E6%AD%BB%E4%B8%8D%E4%BC%91/
 https://kflag.top/categories/github/
 https://kflag.top/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/
